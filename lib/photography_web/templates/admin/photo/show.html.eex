@@ -1,0 +1,16 @@
+  <div class="image-listing">
+        <img src="<%= Photography.Image.url({@photo.image, @photo}, :small) %>">
+        <div class="settings">
+        <p><span class="setting-label">Name </span><%= @photo.name %></p>
+        <p><span class="setting-label">Cat </span><%= @photo.category %></p>
+        <p><span class="setting-label">Shutter </span><%= @photo.shutterspeed %></p>
+        <p><span class="setting-label">ISO </span><%= @photo.iso %></p>
+        <p><span class="setting-label">F </span><%= @photo.aperture %></p>
+        <p><span class="setting-label">Lense </span><%= @photo.lense %></p>
+        <p><span class="setting-label">Desc </span><%= @photo.description %></p>
+        </div>
+        <p>
+          <%= link "Edit Picture", to: Routes.admin_photo_path(@conn, :edit_picture, @photo) %>
+          <%= link "Edit", to: Routes.admin_photo_path(@conn, :edit, @photo) %>
+        </p>
+  </div>

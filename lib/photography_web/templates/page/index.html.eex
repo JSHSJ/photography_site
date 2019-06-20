@@ -1,0 +1,5 @@
+<section class="photo-hero">
+  <p>Hi, it's me. I take photos now. Here are some of my favourites.</p>
+  <h1>Take a look at my photos</h1>
+  <%= link "Show me", to: Routes.photo_path(@conn, :index), class: "hero-link" %>
+</section>

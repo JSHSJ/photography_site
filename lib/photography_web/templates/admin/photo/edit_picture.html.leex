@@ -1,0 +1,9 @@
+<div class="photo-edit-container">
+    <div class="photo-edit-image">
+    <img src="<%= Photography.Image.url({assigns.photo.image, assigns.photo}, :small) %>" class="small-image rotate-<%= assigns.rotation %>">
+    </div>
+    <div class="photo-edit-text">
+    <button phx-click="rotate" phx-value="-90" class="filter-button">Rotate left</button>
+    <button phx-click="rotate" phx-value="90" class="filter-button">Rotate right</button>
+    </div>
+</div>

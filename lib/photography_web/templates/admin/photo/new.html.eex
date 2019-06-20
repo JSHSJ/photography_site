@@ -1,0 +1,5 @@
+<h1>New Photo</h1>
+<div class="form-container">
+
+<%= render "form.html", Map.put(assigns, :action, Routes.admin_photo_path(@conn, :create)) %>
+</div>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Photography</title>
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:300|Fira+Sans:500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+<main class="container">
+        <header class="small-header">
+              <section class="container small-header-container">
+              <svg viewBox="0 0 224 226" xmlns="http://www.w3.org/2000/svg" class="logo">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M127 0H123V31.8718C119.083 31.2975 115.076 31 111 31C74.0627 31 42.8298 55.4223 32.5678 89H0V93H31.4561H35H35.5875C44.419 59.6121 74.8351 35 111 35C154.078 35 189 69.9218 189 113C189 152.69 159.355 185.456 121 190.365V194.396C121 194.396 121 194.396 121 194.396V226H125V193.81C163.618 187.166 193 153.514 193 113C193 105.379 191.96 98.0011 190.015 91H224V87H189V87.631C179.922 59.7005 156.259 38.3474 127 32.5602V0ZM115 69H106V158H115V69Z"/>
+              </svg>
+                <nav>
+                    <%= active_link(@conn, "Photos", to: Routes.photo_path(@conn, :index), active: :inclusive, class: "nav-link")%>
+
+                    <%= if @current_user do %>
+                    <%= active_link(@conn, "Admin", to: Routes.admin_photo_path(@conn, :index), active: :inclusive, class: "nav-link")%>
+                    <%= link "Log out", to: Routes.admin_admin_path(@conn, :logout), method: "delete" , class: "nav-link"%>
+                    <% end %>
+                </nav>
+              </section>
+            </header>
+      <div class="text-container">
+                    <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+                    <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+      <%= render @view_module, @view_template, assigns %>
+      </div>
+    </main>
+    <footer>
+    <div class="legal">
+                    <%= link "Impressum", to: Routes.page_path(@conn, :impressum) %>
+                    <%= link "Datenschutz" , to: Routes.page_path(@conn, :datenschutz) %>
+    </div>
+        <a href="mailto:kontakt@joshuastuebner.com">kontakt[at]joshuastuebner.com</a>
+
+    </footer>
+        <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+
+
+    </body>
+</html>

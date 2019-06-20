@@ -1,0 +1,32 @@
+<section class="photo-show-container">
+    <article class="large-image-container">
+     <picture>
+                 <source
+                         data-srcset="<%= Photography.Image.url({@photo.image, @photo}, :small_webp) %>" media="(max-width: 400px)"/>
+                 <source
+                         data-srcset="<%= Photography.Image.url({@photo.image, @photo}, :small) %>" media="(max-width: 400px)"/>
+                 <source
+                         data-srcset="<%= Photography.Image.url({@photo.image, @photo}, :medium_webp) %>" media="(max-width: 1920px)"/>
+                 <source
+                         data-srcset="<%= Photography.Image.url({@photo.image, @photo}, :medium) %>" media="(max-width: 1920px)"/>
+                 <source
+                         data-srcset="<%= Photography.Image.url({@photo.image, @photo}, :large_webp) %>" media="(min-width: 1920px)"/>
+                 <source
+                         data-srcset="<%= Photography.Image.url({@photo.image, @photo}, :large) %>" media="(min-width: 1920px)"/>
+                 <img class="lazyload" data-src="<%= Photography.Image.url({@photo.image, @photo}, :medium) %>" alt="<%= @photo.name %>">
+             </picture>
+</article>
+<article class="photo-show-text">
+    <h2><%= @photo.name %></h2><br/>
+    <label>Category </label><p><%= @photo.category %></p>
+    <label>Aperture </label><p>F <%= @photo.aperture %></p>
+    <label>ISO </label><p><%= @photo.iso %></p>
+    <label>Shutter </label><p><%= @photo.shutterspeed %></p>
+    <label>Lense </label><p><%= @photo.lense %></p>
+    <label>Description </label><p><%= @photo.description %></p>
+                     <a href="<%= Photography.Image.url({@photo.image, @photo}, :original) %>">Original Image</a>
+
+</article>
+</section>
+
+

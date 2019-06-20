@@ -1,0 +1,96 @@
+<section class="action-bar">
+    <div class="category-buttons">
+        <button phx-click="filter-category" value="all" phx-value="all" name="category" class="filter-button <%= if assigns.category == "all" do %>active <% end%>">All</button>
+        <%= for cat <- assigns.categories do %>
+        <button phx-click="filter-category" value="<%= cat %>" phx-value="<%= cat %>" name="category" class="filter-button <%= if assigns.category == cat do %>active <% end%>""><%= cat %></button>
+        <% end %>
+    </div>
+
+    <form phx-change="search" class="input-container"><input type="text" name="query" value="<%= @query %>" placeholder="Search..."/></form>
+</section>
+
+<button phx-click="toggle-menu" class="ui-button list-button" phx-value="true"></button>
+<section class="action-bar-mobile<%= if assigns.menu_open == "true" do %> open <% end %>">
+    <button phx-click="toggle-menu" class="ui-button close-button" phx-value="false"></button>
+    <div class="category-buttons">
+        <button phx-click="filter-category" value="all" phx-value="all" name="category" class="filter-button <%= if assigns.category == "all" do %>active <% end%>">All</button>
+        <%= for cat <- assigns.categories do %>
+        <button phx-click="filter-category" value="<%= cat %>" phx-value="<%= cat %>" name="category" class="filter-button <%= if assigns.category == cat do %>active <% end%>""><%= cat %></button>
+        <% end %>
+    </div>
+
+    <form phx-change="search" class="input-container"><input type="text" name="query" value="<%= @query %>" placeholder="Search..."/></form>
+</section>
+
+<div class="photo-container">
+    <div class="column">
+    <%= for photo <- column_1(assigns.filtered_photos) do %>
+            <%= link to: Routes.photo_path(@socket, :show, photo.slug), class: "image-preview-container" do %>
+            <picture>
+                <source
+                    data-srcset="<%= Photography.Image.url({photo.image, photo}, :small_webp) %>" media="(max-width: 400px)"/>
+                <source
+                    data-srcset="<%= Photography.Image.url({photo.image, photo}, :small) %>" media="(max-width: 400px)"/>
+                <source
+                    data-srcset="<%= Photography.Image.url({photo.image, photo}, :medium_webp) %>" media="(max-width: 1920px)"/>
+                <source
+                        data-srcset="<%= Photography.Image.url({photo.image, photo}, :medium) %>" media="(max-width: 1920px)"/>
+                <source
+                    data-srcset="<%= Photography.Image.url({photo.image, photo}, :large_webp) %>" media="(min-width: 1920px)"/>
+                <source
+                        data-srcset="<%= Photography.Image.url({photo.image, photo}, :large) %>" media="(min-width: 1920px)"/>
+                <img class="lazyload" data-src="<%= Photography.Image.url({photo.image, photo}, :medium) %>" alt="<%= photo.name %>">
+            </picture>
+            </link>
+            <% end %>
+    <% end %>
+    </div>
+
+    <div class="column">
+        <%= for photo <- column_2(assigns.filtered_photos) do %>
+        <%= link to: Routes.photo_path(@socket, :show, photo.slug), class: "image-preview-container" do %>
+        <picture>
+            <source
+                    data-srcset="<%= Photography.Image.url({photo.image, photo}, :small_webp) %>" media="(max-width: 400px)"/>
+            <source
+                    data-srcset="<%= Photography.Image.url({photo.image, photo}, :small) %>" media="(max-width: 400px)"/>
+            <source
+                    data-srcset="<%= Photography.Image.url({photo.image, photo}, :medium_webp) %>" media="(max-width: 1920px)"/>
+            <source
+                    data-srcset="<%= Photography.Image.url({photo.image, photo}, :medium) %>" media="(max-width: 1920px)"/>
+            <source
+                    data-srcset="<%= Photography.Image.url({photo.image, photo}, :large_webp) %>" media="(min-width: 1920px)"/>
+            <source
+                    data-srcset="<%= Photography.Image.url({photo.image, photo}, :large) %>" media="(min-width: 1920px)"/>
+            <img class="lazyload" data-src="<%= Photography.Image.url({photo.image, photo}, :medium) %>" alt="<%= photo.name %>">
+        </picture>
+        </link>
+        <% end %>
+        <% end %>
+    </div>
+
+
+    <div class="column">
+        <%= for photo <- column_3(assigns.filtered_photos) do %>
+        <%= link to: Routes.photo_path(@socket, :show, photo.slug), class: "image-preview-container" do %>
+        <picture>
+            <source
+                    data-srcset="<%= Photography.Image.url({photo.image, photo}, :small_webp) %>" media="(max-width: 400px)"/>
+            <source
+                    data-srcset="<%= Photography.Image.url({photo.image, photo}, :small) %>" media="(max-width: 400px)"/>
+            <source
+                    data-srcset="<%= Photography.Image.url({photo.image, photo}, :medium_webp) %>" media="(max-width: 1920px)"/>
+            <source
+                    data-srcset="<%= Photography.Image.url({photo.image, photo}, :medium) %>" media="(max-width: 1920px)"/>
+            <source
+                    data-srcset="<%= Photography.Image.url({photo.image, photo}, :large_webp) %>" media="(min-width: 1920px)"/>
+            <source
+                    data-srcset="<%= Photography.Image.url({photo.image, photo}, :large) %>" media="(min-width: 1920px)"/>
+            <img class="lazyload" data-src="<%= Photography.Image.url({photo.image, photo}, :medium) %>" alt="<%= photo.name %>">
+        </picture>
+        </link>
+        <% end %>
+        <% end %>
+    </div>
+
+</div>

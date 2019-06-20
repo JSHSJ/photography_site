@@ -1,0 +1,20 @@
+<h1>Listing Photos</h1>
+
+<%= for photo <- @photos do %>
+    <tr>
+      <p><%= photo.name %></p>
+      <p><%= photo.shutterspeed %></p>
+      <p><%= photo.iso %></p>
+      <p><%= photo.aperture %></p>
+      <p><%= photo.lense %></p>
+      <p><%= photo.description %></p>
+
+      <img src="<%= Photography.Image.url({photo.image, photo}, :thumb) %>">
+
+
+      <p>
+        <%= link "Show", to: Routes.photo_path(@conn, :show, photo) %>
+      </p>
+    </tr>
+<% end %>
+

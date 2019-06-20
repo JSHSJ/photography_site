@@ -1,0 +1,24 @@
+<h1>Photos</h1>
+
+<span><%= link "New Photo", to: Routes.admin_photo_path(@conn, :new) %></span>
+
+<%= for photo <- @photos do %>
+      <div class="image-listing">
+      <img class="lazyload" data-src="<%= Photography.Image.url({photo.image, photo}, :small) %>">
+      <div class="settings">
+      <p><span class="setting-label">Name </span><%= photo.name %></p>
+      <p><span class="setting-label">Cat </span><%= photo.category %></p>
+      <p><span class="setting-label">Shutter </span><%= photo.shutterspeed %></p>
+      <p><span class="setting-label">ISO </span><%= photo.iso %></p>
+      <p><span class="setting-label">F </span><%= photo.aperture %></p>
+      <p><span class="setting-label">Lense </span><%= photo.lense %></p>
+      <p><span class="setting-label">Desc </span><%= photo.description %></p>
+      </div>
+      <p>
+        <%= link "Show", to: Routes.admin_photo_path(@conn, :show, photo) %>
+        <%= link "Edit", to: Routes.admin_photo_path(@conn, :edit, photo) %>
+        <%= link "Delete", to: Routes.admin_photo_path(@conn, :delete, photo), method: :delete, data: [confirm: "Are you sure?"] %>
+      </p>
+
+      </div>
+<% end %>

@@ -1,0 +1,9 @@
+<h1>Edit Photo</h1>
+<div class="form-container">
+<%= render "form.html", Map.put(assigns, :action, Routes.admin_photo_path(@conn, :update, @photo)) %>
+
+<div>
+<img src="<%= Photography.Image.url({@photo.image, @photo}, :small) %>" class="small-image">
+<%= link "Edit Picture", to: Routes.admin_photo_path(@conn, :edit_picture, @photo) %>
+</div>
+</div>
