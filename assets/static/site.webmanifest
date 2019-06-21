@@ -1,0 +1,14 @@
+{
+    "name": "Josh's Fotos",
+    "short_name": "Josh's Fotos",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#f9f8cc",
+    "background_color": "#f9f8cc",
+    "display": "standalone"
+}

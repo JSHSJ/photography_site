@@ -33,8 +33,14 @@ npm-debug.log
 # this depending on your deployment strategy.
 /priv/static/
 
+# media location
 /media
 
-/projectFilesBackup
+# More local files
+projectFilesBackup/
 _build/
-.elixir_ls
+.elixir_ls/
+.idea/
+
+# Prod secret
+config/*.secret.exs
