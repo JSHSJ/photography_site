@@ -7,6 +7,8 @@ footer {
   margin-top: 100px;
 
   a{
+    @include font-big;
+    font-weight: 500;
     font-size: 16px;
     margin-bottom: 20px;
     display: inline-block;

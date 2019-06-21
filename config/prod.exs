@@ -10,8 +10,19 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :photography, PhotographyWeb.Endpoint,
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  http: [port: System.get_env("PORT") || 4000],
+  url: [host: "photos.1aus2.de", port: 80],
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  server: true,
+  code_reloader: false,
+  root: "."
+
+config :saison_kalender_phx, SaisonKalenderPhxWeb.Endpoint,
+       live_reload: [
+         patterns: [
+           ~r{lib/saison_kalender_phx_web/live/.*(ex)$}
+         ]
+       ]
 
 # Do not print debug messages in production
 config :logger, level: :info
@@ -62,4 +73,5 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs which loads secrets
 # and configuration from environment variables.
+config :phoenix, :serve_endpoints, true
 import_config "prod.secret.exs"
