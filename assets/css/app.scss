@@ -41,12 +41,11 @@ a {
   display: inline-block;
   width: max-content;
   text-decoration: none;
-  border-bottom: 1px solid $color-accent;
+  //border-bottom: 1px solid $color-accent;
 
   &:hover {
     color: $color-accent;
-    border: none;
-
+    //border-bottom: 1px solid transparent;
   }
 }
 
@@ -93,6 +92,7 @@ img {
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+  position: relative;
 
   @media screen and (max-width: 1024px) {
     display: none;
@@ -102,12 +102,12 @@ img {
 
 input {
   outline: none;
-  background: $color-bg;
+  background: $color-bg-alt;
   padding: 12px 8px;
   font-size: 20px;
-  color: $color-fg;
+  color: $color-text-alt;
   border-radius: 2px;
-  border: 1px solid $color-accent;
+  border: none;
   transition: background .3s;
 
   &:focus-within {
@@ -133,26 +133,22 @@ input {
   border: none;
   font-size: 22px;
   height: 54px;
-  color: $color-fg;
+  color: $color-text-alt;
   margin-right: 10px;
   padding: 12px;
   background: none;
-  border: 1px solid $color-accent;
   transform-origin: right;
 
 
   &:hover {
     color: $color-bg;
     background: $color-accent;
-    border: 1px solid transparent;
   }
 
   &.active {
     color: $color-accent;
     background: none;
-    border: 1px solid transparent;
     transition: background .3s, color .3s;
-
   }
 }
 .image-listing {

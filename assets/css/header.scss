@@ -23,6 +23,7 @@ header {
   width: 250px;
   margin-bottom: 40px;
   fill: $color-accent;
+  filter: drop-shadow(2px 4px 8px rgba(0,0,0, .3));
 }
 
 .header-container {
