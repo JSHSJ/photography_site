@@ -11,7 +11,7 @@ use Mix.Config
 # before starting your production server.
 config :photography, PhotographyWeb.Endpoint,
   http: [port: System.get_env("PORT") || 4000],
-  url: [host: "photos.1aus2.de", port: 80],
+  url: [host: "1aus2.de/photos/", port: 443],
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true,
   code_reloader: false,
