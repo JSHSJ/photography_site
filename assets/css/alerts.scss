@@ -3,23 +3,19 @@
 .alert {
   padding: 15px;
   margin-bottom: 20px;
-  border: 1px solid transparent;
   border-radius: 4px;
 }
 .alert-info {
-  color: #31708f;
-  background-color: #d9edf7;
-  border-color: #bce8f1;
+  color: $color-accent;
+  background-color: $color-bg-alt;
 }
 .alert-warning {
-  color: #8a6d3b;
-  background-color: #fcf8e3;
-  border-color: #faebcc;
+  color: $color-bg;
+  background-color: $color-fg;
 }
 .alert-danger {
-  color: #a94442;
-  background-color: #f2dede;
-  border-color: #ebccd1;
+  color: $color-bg;
+  background-color: $color-accent;
 }
 .alert p {
   margin-bottom: 0;
