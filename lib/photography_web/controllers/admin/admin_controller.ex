@@ -10,7 +10,7 @@ defmodule PhotographyWeb.Admin.AdminController do
   def login(conn, _params) do
     if conn.assigns.current_user do
       conn
-      |> redirect(to: Routes.admin_admin_path(conn, :index))
+      |> redirect(to: Routes.photo_path(conn, :index))
     end
 
     render(conn, "login.html")

@@ -62,7 +62,7 @@ config :photography, PhotographyWeb.Endpoint,
       ~r"priv/gettext/.*(po)$",
       ~r"lib/photography_web/{live,views}/.*(ex)$",
       ~r"lib/photography_web/templates/.*(eex)$",
-      ~r{lib/my_app_web/live/.*(ex)$}
+      ~r{lib/photography_web/live/.*(ex)$}
   ]
   ]
 

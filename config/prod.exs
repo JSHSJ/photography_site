@@ -11,7 +11,7 @@ use Mix.Config
 # before starting your production server.
 config :photography, PhotographyWeb.Endpoint,
   http: [port: System.get_env("PORT") || 4000],
-  url: [host: "1aus2.de/photos/", port: 443],
+  url: [host: "1aus2.de/photos", port: 443],
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true,
   code_reloader: false,
@@ -19,7 +19,7 @@ config :photography, PhotographyWeb.Endpoint,
   version: Application.spec(:phoenix_distillery, :vsn),
   live_reload: [
     patterns: [
-      ~r{lib/saison_kalender_phx_web/live/.*(ex)$}
+      ~r{lib/photography_web/live/.*(ex)$}
     ]
   ]
 
