@@ -17,6 +17,7 @@ config :photography, Photography.Repo,
 # with webpack to recompile .js and .css sources.
 config :photography, PhotographyWeb.Endpoint,
   http: [port: 4000],
+  static_url: [path: "/photos"],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,

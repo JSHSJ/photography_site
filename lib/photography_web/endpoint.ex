@@ -21,7 +21,7 @@ defmodule PhotographyWeb.Endpoint do
   # serve media folder
   plug Plug.Static,
   at: "/photos/media",
-  from: Path.expand("~/media/1aus2/photos"),
+  from: Path.expand("./photos/media"),
   gzip: false
 
   # Code reloading can be explicitly enabled under the

@@ -56,7 +56,7 @@ defmodule Photography.Image do
 
   # Override the storage directory:
   def storage_dir(_version, {_, scope}) do
-    "~/media/1aus2/photos/#{scope.uuid}"
+    "photos/media/photos/#{scope.uuid}"
   end
 
   # Provide a default URL if there hasn't been a file uploaded
