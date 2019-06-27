@@ -16,14 +16,13 @@ config :photography, PhotographyWeb.Endpoint,
   server: true,
   code_reloader: false,
   root: ".",
-  version: Application.spec(:phoenix_distillery, :vsn)
+  version: Application.spec(:phoenix_distillery, :vsn),
+  live_reload: [
+    patterns: [
+      ~r{lib/saison_kalender_phx_web/live/.*(ex)$}
+    ]
+  ]
 
-config :saison_kalender_phx, PhotographyWeb.Endpoint,
-       live_reload: [
-         patterns: [
-           ~r{lib/saison_kalender_phx_web/live/.*(ex)$}
-         ]
-       ]
 
 # Do not print debug messages in production
 config :logger, level: :info
