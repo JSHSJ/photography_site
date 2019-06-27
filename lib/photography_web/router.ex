@@ -21,7 +21,7 @@ defmodule PhotographyWeb.Router do
 #  end
 
 
-  scope "/photos", PhotographyWeb do
+  scope "/photos/", PhotographyWeb do
     pipe_through :browser
 
     get "/", PhotoController, :index
@@ -40,8 +40,4 @@ defmodule PhotographyWeb.Router do
     end
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", PhotographyWeb do
-  #   pipe_through :api
-  # end
 end

@@ -1,9 +1,9 @@
 defmodule PhotographyWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :photography
 
-  socket "/live", Phoenix.LiveView.Socket
+  socket "/photos/live", Phoenix.LiveView.Socket
 
-  socket "/socket", PhotographyWeb.UserSocket,
+  socket "/photos/socket", PhotographyWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -12,7 +12,7 @@ defmodule PhotographyWeb.Endpoint do
   # You should set gzip to true if you are running phx.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/",
+    at: "/photos",
     from: :photography,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
@@ -20,8 +20,8 @@ defmodule PhotographyWeb.Endpoint do
 
   # serve media folder
   plug Plug.Static,
-  at: "/media",
-  from: Path.expand("./media"),
+  at: "/photos/media",
+  from: Path.expand("~/media/1aus2/photos"),
   gzip: false
 
   # Code reloading can be explicitly enabled under the
