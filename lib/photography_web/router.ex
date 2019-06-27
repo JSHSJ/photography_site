@@ -38,11 +38,6 @@ defmodule PhotographyWeb.Router do
     resources "/photos", PhotoController
     get "/photos/:id/edit-picture", PhotoController, :edit_picture
 
-#    live "/photos", PhotoLive.Index
-#    live "/photos/new", PhotoLive.New
-#    live "/photos/:id", PhotoLive.Show
-#    live "/photos/:id/edit", PhotoLive.Edit
-
   end
 
   # Other scopes may use custom stacks.
