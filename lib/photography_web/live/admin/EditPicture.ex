@@ -18,7 +18,8 @@ defmodule PhotographyWeb.Admin.EditPicture do
   end
 
   def handle_event("rotate", amount, socket) do
-    dirname = Path.join(["./media/photos",socket.assigns.photo.uuid])
+    dirname = "photos/media/photos/" <> socket.assigns.photo.uuid
+    IO.inspect(dirname)
     files = Path.wildcard("#{dirname}/*.{jpg,JPG,png,PNG,jpeg,JPEG,webp,WEBP}")
 
     files
