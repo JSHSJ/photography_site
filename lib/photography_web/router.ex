@@ -21,23 +21,23 @@ defmodule PhotographyWeb.Router do
 #  end
 
 
-  scope "/", PhotographyWeb do
+  scope "/photos", PhotographyWeb do
     pipe_through :browser
 
     get "/", PhotoController, :index
     get "/:photo_slug", PhotoController, :show
-  end
 
-  scope "/admin", PhotographyWeb.Admin, as: :admin do
-    pipe_through [:browser, :backend_layout]
+    scope "/admin", PhotographyWeb.Admin, as: :admin do
+      pipe_through [:backend_layout]
 
-    get "/login", AdminController, :login
-    post "/logged-in", AdminController, :logged_in
-    delete "/logout", AdminController, :logout
+      get "/login", AdminController, :login
+      post "/logged-in", AdminController, :logged_in
+      delete "/logout", AdminController, :logout
 
-    resources "/photos", PhotoController
-    get "/photos/:id/edit-picture", PhotoController, :edit_picture
+      resources "/photos", PhotoController
+      get "/photos/:id/edit-picture", PhotoController, :edit_picture
 
+    end
   end
 
   # Other scopes may use custom stacks.
