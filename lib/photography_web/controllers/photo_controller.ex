@@ -2,7 +2,6 @@ defmodule PhotographyWeb.PhotoController do
   use PhotographyWeb, :controller
 
   alias Photography.Photos
-  alias Photography.Photos.Photo
 
   alias Phoenix.LiveView
 

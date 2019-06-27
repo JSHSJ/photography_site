@@ -38,4 +38,4 @@ npm-debug.log
 projectFilesBackup/
 _build/
 .elixir_ls/
-.idea/
+.idea

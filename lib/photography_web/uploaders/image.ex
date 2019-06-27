@@ -55,7 +55,7 @@ defmodule Photography.Image do
   end
 
   # Override the storage directory:
-  def storage_dir(version, {_, scope}) do
+  def storage_dir(_version, {_, scope}) do
     "media/photos/#{scope.uuid}"
   end
 
