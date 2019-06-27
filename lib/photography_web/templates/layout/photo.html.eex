@@ -42,8 +42,8 @@
     </main>
         <footer>
         <div class="legal">
-                        <%= link "Impressum", to: Routes.page_path(@conn, :impressum) %>
-                        <%= link "Datenschutz" , to: Routes.page_path(@conn, :datenschutz) %>
+           <a href="https://1aus2.de/impressum">Impressum</a>
+           <a href="https://1aus2.de/datenschutz">Datenschutz</a>
         </div>
                 <a href="mailto:kontakt@joshuastuebner.com">kontakt[at]joshuastuebner.com</a>
 

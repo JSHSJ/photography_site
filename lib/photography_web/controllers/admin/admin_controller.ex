@@ -21,7 +21,7 @@ defmodule PhotographyWeb.Admin.AdminController do
       {:ok, conn} ->
         conn
         |> put_flash(:info, "Welcome back!")
-        |> redirect(to: Routes.page_path(conn, :index))
+        |> redirect(to: Routes.photo_path(conn, :index))
 
       {:error, _reason, conn} ->
         conn
@@ -33,7 +33,7 @@ defmodule PhotographyWeb.Admin.AdminController do
   def logout(conn, _) do
     conn
     |> PhotographyWeb.Auth.logout()
-    |> redirect(to: Routes.page_path(conn, :index))
+    |> redirect(to: Routes.photo_path(conn, :index))
   end
 
   def products(conn, _) do
@@ -46,7 +46,7 @@ defmodule PhotographyWeb.Admin.AdminController do
     else
       conn
       |> put_flash(:error, "You must be logged in to access that page")
-      |> redirect(to: Routes.page_path(conn, :index))
+      |> redirect(to: Routes.photo_path(conn, :index))
       |> halt()
     end
   end

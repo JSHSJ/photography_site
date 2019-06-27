@@ -24,12 +24,8 @@ defmodule PhotographyWeb.Router do
   scope "/", PhotographyWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
-    get "/impressum", PageController, :impressum
-    get "/datenschutz", PageController, :datenschutz
-
-    get "/photos", PhotoController, :index
-    get "/photos/:photo_slug", PhotoController, :show
+    get "/", PhotoController, :index
+    get "/:photo_slug", PhotoController, :show
   end
 
   scope "/admin", PhotographyWeb.Admin, as: :admin do
