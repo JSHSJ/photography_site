@@ -27,7 +27,7 @@ defmodule PhotographyWeb.Router do
     get "/", PhotoController, :index
     get "/:photo_slug", PhotoController, :show
 
-    scope "/admin", PhotographyWeb.Admin, as: :admin do
+    scope "/admin", Admin, as: :admin do
       pipe_through [:backend_layout]
 
       get "/login", AdminController, :login
